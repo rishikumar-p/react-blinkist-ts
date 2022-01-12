@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import MyLibrary from './components/pages/MyLibrary/MyLibrary';
+import BookInfo from './components/pages/BookInfo/BookInfo';
+import Explore from './components/pages/Explore/Explore';
+import NotFound from './components/pages/NotFound';
+import MainHeader from './components/organisms/MainHeader/MainHeader';
+import { ThemeProvider } from '@material-ui/styles';
+import { theme } from './Theme/Theme';
+import { Container } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <ThemeProvider theme={theme} >
+        <Router>
+          <MainHeader/>
+          <Routes>
+            <Route  path="/" element={<MyLibrary/>} />
+            <Route  path="/myLibrary" element={<MyLibrary/>} />
+            <Route  path="/explore/:category" element={<Explore/>} />
+            <Route  path="/bookInfo" element={<BookInfo/>} />
+            <Route  element={<NotFound/>} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </Container>
   );
 }
 
-export default App;
+export default App; 
