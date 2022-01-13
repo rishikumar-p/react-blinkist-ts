@@ -1,4 +1,4 @@
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 interface EndIconButtonProps {
   id?: string,
@@ -8,8 +8,8 @@ interface EndIconButtonProps {
   color?: 'primary' | 'secondary',
   endIcon: JSX.Element,
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
-  testId: string,
-};
+  testId?: string,
+}
 
 const EndIconButton = (props: EndIconButtonProps) => {
   return (
@@ -21,6 +21,7 @@ const EndIconButton = (props: EndIconButtonProps) => {
       endIcon={props.endIcon}
       disableRipple={true}
       data-testid={props.testId}
+      style={{textTransform: "none", fontFamily: "Raleway", fontSize: 18}}
     >
       {props.label}
     </Button>

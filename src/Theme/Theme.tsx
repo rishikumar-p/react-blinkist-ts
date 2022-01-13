@@ -11,6 +11,9 @@ export const theme = createTheme({
         },
         success: {
             main: '#22c870'
+        },
+        info:{
+            main: "#FFFFFF",
         }
     },
 
@@ -38,13 +41,12 @@ export const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
+                    color: "#FFFFFF",
                     fontFamily: "Raleway",
                     backgroundColor: "#FFFFFF",
-                    color: "#03314B",
                 },
                 colorPrimary: {
                     backgroundColor: "#FFFFFF",
-                    color: "#03314B",
                 },
             },
         },
@@ -83,10 +85,12 @@ export const theme = createTheme({
                     disableTouchRipple: true,
                     disableElevation: true,
                 },
-                textSecondary: {
-                    color: "#000000",
+                text: {
+                    backGoundColor: "#000000",
+                    borderBottom: "3px solid #FFFFFF",
                     "&:hover": {
-                        borderBottom: "1px solid",
+                        borderBottom: "3px solid #2CE080",
+                        borderRadius: 0
                     },
                 }
             }

@@ -1,10 +1,10 @@
 import * as React from "react";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 import progressBar from "./progressBar.png";
 import { Stack, Button, Box } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -76,7 +76,7 @@ export default function BookCard(props: BookCardProps) {
     return (
         <ThemeProvider theme={theme}>
         <Box sx={{ borderRadius: 4 }}>
-            <Card style={{ maxWidth: 284, maxHeight: 500, boxShadow: "none", }}>
+            <Card style={{ maxWidth: 284, maxHeight: 500, boxShadow: "none", }} data-testid={`book-card-${props.id}`}>
                 <CardMedia component="img" image={props.image} alt={props.title} />
                 <Box sx={{ borderLeft: 1, borderRight: 1, borderColor: "#BAC9CF"}}>
                     <CardContent>

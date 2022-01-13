@@ -1,12 +1,12 @@
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 interface DefaultButtonProps{
     variant: "text" | "outlined" | "contained" | undefined,
-    color?: "inherit" | "primary" | "secondary" | "default" | undefined,
-    size?: "small" | "medium" | "large" | undefined,
+    color?: 'inherit' | 'primary' | 'secondary' ,
+    size?: "small" | "medium" | "large" ,
     onClick?: ()=>void,
     label: string,
-    testId: string
+    testId?: string
 }
 
 const DefaultButton = (props: DefaultButtonProps) => {
@@ -18,6 +18,7 @@ const DefaultButton = (props: DefaultButtonProps) => {
       size={props.size}
       disableRipple={true}
       data-testid={props.testId}
+      style={{textTransform: "none"}}
     >
       {props.label}
     </Button>

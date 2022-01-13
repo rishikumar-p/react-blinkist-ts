@@ -6,7 +6,7 @@ import MenuList from "@mui/material/MenuList";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import accountIcon from "./accountIcon.png";
-import { Box, Divider } from "@material-ui/core";
+import { Box, Divider } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -103,19 +103,20 @@ export default function AccountDropdown() {
                     MenuListProps={{
                         "aria-labelledby": "account-button",
                     }}
+                    data-testid="account-dropdown-menu"
                 >
                     <MenuList>
-                        <MenuItem onClick={handleClose}>Invite Friends</MenuItem>
+                        <MenuItem onClick={handleClose} data-testid="account-menu-item-1">Invite Friends</MenuItem>
                         <Divider />
-                        <MenuItem color="secondary" onClick={handleClose}>
+                        <MenuItem color="secondary" onClick={handleClose} data-testid="account-menu-item-2">
                             Wishlist
                         </MenuItem>
                         <Divider />
-                        <MenuItem onClick={handleClose}>Settings</MenuItem>
+                        <MenuItem onClick={handleClose} data-testid="account-menu-item-3">Settings</MenuItem>
                         <Divider />
-                        <MenuItem onClick={handleClose}>Help</MenuItem>
+                        <MenuItem onClick={handleClose} data-testid="account-menu-item-4">Help</MenuItem>
                         <Divider />
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={handleClose} data-testid="account-menu-item-5">Logout</MenuItem>
                     </MenuList>
                 </Menu>
             </Box>

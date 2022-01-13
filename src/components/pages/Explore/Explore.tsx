@@ -46,10 +46,10 @@ const Explore = () => {
     getBooks();
   },[selectedCategory]);
 
-  const handleSearch = (searchedText: string) => {
-    searchedText = searchedText.trim();
-    setSearchedText(searchedText);
-    if(searchedText && searchedText.trim().length === 0) {
+  const handleSearch = (input: string) => {
+    input = input.trim();
+    setSearchedText(input);
+    if(input && searchedText.length === 0) {
        setResultBooks(selectedCategoryBooks);
     }
     else{

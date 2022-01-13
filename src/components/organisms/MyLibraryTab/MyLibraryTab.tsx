@@ -47,7 +47,7 @@ export default function MyLibraryTab() {
         }
       });
     }
-    return  await response.data;
+    return response.data;
   };
 
   useEffect(()=>{

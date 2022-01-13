@@ -20,8 +20,7 @@ interface cardGridProps {
 
 const CardGrid = (props: cardGridProps) => {
   return (
-    <Grid container spacing={3}>
-      {console.log(props)}
+    <Grid container spacing={3} data-testid="card-grid">
       {props.books.map((book: Book, index: number) => {
         if (book.id === 1) {
           return (

@@ -9,7 +9,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Grid from "@mui/material/Grid";
 import BookCard from "../../molecules/BookCard/BookCard";
 import bookimage from "./bookimage.png";
-import { Divider, Typography } from "@material-ui/core";
+import { Divider, Typography } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { books } from "../../../data/booksdata";
 import Stack from "@mui/material/Stack";
