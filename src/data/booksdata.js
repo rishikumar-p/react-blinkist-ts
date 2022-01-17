@@ -59,7 +59,7 @@ export let books = [
     duration: 30,
     category: "Entrepreneurship",
     image: "https://images.blinkist.com/images/books/60701b716cee070008b8b7a1/1_1/470.jpg",
-    isInMyLibrary: true,
+    isInMyLibrary: false,
     isFinished: false
   },
   {
@@ -89,7 +89,7 @@ export let books = [
     duration: 20,
     category: "Science",
     image: "https://images.blinkist.com/images/books/60507e296cee070007c4dc7e/1_1/470.jpg",
-    isInMyLibrary: true,
+    isInMyLibrary: false,
     isFinished: false
   },
   {

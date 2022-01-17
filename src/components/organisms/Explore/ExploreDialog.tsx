@@ -2,6 +2,7 @@ import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import { categories, categoryIcons } from "../../../data/booksdata";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
@@ -110,15 +111,28 @@ export default function ExploreDialog() {
     return (
         <div>
             <ThemeProvider theme={theme}>
-                <EndIconButton
-                    endIcon={(icon === 0 && <KeyboardArrowDownIcon />) || <KeyboardArrowUpIcon />}
+                <Button
+                    endIcon={icon === 0 ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
                     id="explore-button"
                     onClick={handleClick}
-                    label="Explore"
                     variant="text"
                     size="large"
-                    testId="explore-button"
-                />
+                    data-testid="explore-button"
+                    disableRipple
+                    disableTouchRipple
+                    disableFocusRipple
+                    sx={{
+                        borderBottom:
+                          icon === 0
+                            ? "3px solid transparent"
+                            : "3px solid #00C263 ",
+                        backgroundColor: "inherit",
+                        borderRadius:0,
+                        fontSize: "18px"
+                      }}                   
+                >
+                    Explore
+                    </Button>
                 <Menu
                     id="explore-menu"
                     aria-labelledby="explore-button"
@@ -155,9 +169,9 @@ export default function ExploreDialog() {
                         <Grid container rowGap={1} spacing={1}>
                             {categories.map((categoryName: string, index: number) => {
                                 return (
-                                    <Grid item key={index} xs={12} sm={4} md={4}>
+                                    <Grid item key={categoryName} xs={12} sm={4} md={4}>
                                         <Link to={`/explore/${categoryName}`} style={{ textDecoration: "none" }}>
-                                            <StyledMenuItem onClick={handleClose}>
+                                            <StyledMenuItem onClick={handleClose} data-testid={categoryName}>
                                                 {categoryIcons[index]}
                                                 &nbsp;&nbsp;
                                                 {categoryName}

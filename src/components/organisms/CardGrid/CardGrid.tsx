@@ -24,20 +24,20 @@ const CardGrid = (props: cardGridProps) => {
       {props.books.map((book: Book, index: number) => {
         if (book.id === 1) {
           return (
-            <Grid item key={index} xs={12} sm={4} md={4}>
-              <Link to="/bookinfo" style={{textDecoration: "none"}}>
-                <BookCard
-                  id={book.id}
-                  title={book.title}
-                  author={book.author}
-                  duration={book.duration}
-                  category={book.category}
-                  image={book.image}
-                  isFinished={book.isFinished}
-                  isInMyLibrary={book.isInMyLibrary}
-                />
-              </Link>
-            </Grid>
+              <Grid item key={index} xs={12} sm={12} md={4}>
+                  <Link to="/bookinfo" style={{textDecoration: "none"}}>
+                    <BookCard
+                      id={book.id}
+                      title={book.title}
+                      author={book.author}
+                      duration={book.duration}
+                      category={book.category}
+                      image={book.image}
+                      isFinished={book.isFinished}
+                      isInMyLibrary={book.isInMyLibrary}
+                    />
+                  </Link>
+              </Grid>
           );
         }
         return (

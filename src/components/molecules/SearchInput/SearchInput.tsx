@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from 'react';
-import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
@@ -18,16 +17,14 @@ export default function SearchInput(props: Props) {
   }
 
   return (
-    <Box sx={{ m: 1 }}>
       <FormControl fullWidth sx={{ m: 1, minWidth:"400px", maxWidth:"658px"}} variant="standard">
           <Input
-            id="searchInput"
             value={searchText}
             placeholder = "Search by Title or Author"
             onChange={handleChange}
             startAdornment={<InputAdornment position="start"><SearchIcon/></InputAdornment>}
+            data-testid="searchInput"
           />
         </FormControl>
-    </Box>
   );
 }

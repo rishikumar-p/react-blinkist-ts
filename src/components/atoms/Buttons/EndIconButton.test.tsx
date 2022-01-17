@@ -4,25 +4,24 @@ import EndIconButton from './EndIconButton';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import '@testing-library/jest-dom';
 
+const handleClick = jest.fn();
 
 describe('End Icon Button', () => {
     test('checking the button label', () => {
-        render(<EndIconButton label="Im Button"  variant="outlined" endIcon={<KeyboardArrowDownOutlinedIcon/>} testId="end-icon-button"/>);
-        const button = screen.getByTestId('default-button');
-        expect(button.textContent).toBe('Im Button');
+        render(<EndIconButton label="Hello" variant="outlined" endIcon={<KeyboardArrowDownOutlinedIcon />} testId="end-icon-button" />);
+        const button = screen.getByTestId('end-icon-button');
+        expect(button.textContent).toBe('Hello');
+    });
+
+    test('checking the button icon', () => {
+        render(<EndIconButton label="Hello" variant="outlined" endIcon={<KeyboardArrowDownOutlinedIcon />} testId="end-icon-button" />);
+        const button = screen.getByTestId('end-icon-button');
+        expect(button.textContent).toBe('Hello');
+    });
+
+    test('Checking the icon', () => {
+        render(<EndIconButton label="Hello" variant="outlined" endIcon={<KeyboardArrowDownOutlinedIcon />} testId="end-icon-button" onClick={handleClick}/>);
+        const icon = screen.getByTestId("KeyboardArrowDownOutlinedIcon");
+        expect(icon).toBeTruthy();
     });
 });
-
-// describe('checking the button click', () => {
-//     const handleClick = jest.fn();
-//     it('Checking the click', () => {
-
-//         render(<DefaultButton
-//             onClick={handleClick}
-//             label="Button"
-//             variant="contained"
-            
-//         />);
-//         expect(screen.getByTestId("default-button")).toBeTruthy();
-//     });
-// });

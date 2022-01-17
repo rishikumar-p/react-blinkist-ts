@@ -26,35 +26,93 @@ const books = [
     },
 ]
 
+function renderBookData(index: number){
+    render(<BookCard
+        id={books[index].id}
+        title={books[index].title}
+        author={books[index].author}
+        duration={books[index].duration}
+        category={books[index].category}
+        image={books[index].image}
+        isFinished={books[index].isFinished}
+        isInMyLibrary={books[index].isInMyLibrary}
+    />);
+}
+
 
 
 
 describe('Book Card', () => {
-    it('Book in the Library', () => {
-        render(<BookCard
-            id={books[0].id}
-            title={books[0].title}
-            author={books[0].author}
-            duration={books[0].duration}
-            category={books[0].category}
-            image={books[0].image}
-            isFinished={books[0].isFinished}
-            isInMyLibrary={books[0].isInMyLibrary}
-        />);
+    describe('Book in the Library', () => {
+        test('Book Card should be displayed', () => {
+            renderBookData(0);
+            const bookCardInLibrary = screen.getByTestId("book-card-2");
+            expect(bookCardInLibrary).toBeTruthy();
+            expect(bookCardInLibrary).toBeVisible();
+        })
+
+        test('Should display image, title, author and duration  of the book card', () => {
+            renderBookData(0);
+            const bookCardInLibrary = screen.getByTestId("book-card-2");
+            expect(bookCardInLibrary).toBeTruthy();
+            expect(bookCardInLibrary).toBeVisible();
+            expect(bookCardInLibrary.textContent).toContain('Dropshipping');
+            expect(bookCardInLibrary.textContent).toContain('James Moore');
+            expect(bookCardInLibrary.textContent).toContain('30-minute read');
+            const bookImg = screen.getByTestId("book-image-2");
+            expect(bookImg).toBeTruthy()
+        })
+
+        test('Book Card should not have Add To Library Button, and have horizon button and progress bar',() => {
+            renderBookData(0);
+            const addToLibraryButton = screen.queryByRole("button");
+            expect(addToLibraryButton).toBeFalsy();
+            const progressBar = screen.getByTestId(/progress-bar/i);
+            expect(progressBar).toBeTruthy();
+            expect(progressBar).toBeVisible();
+            const moreIcon = screen.getByTestId(/more-icon/i);
+            expect(moreIcon).toBeTruthy();
+            expect(moreIcon).toBeVisible();
+            
+        })
+        
         
     });
 
-    it('Book not in the Library', () => {
-        render(<BookCard
-            id={books[1].id}
-            title={books[1].title}
-            author={books[1].author}
-            duration={books[1].duration}
-            category={books[1].category}
-            image={books[1].image}
-            isFinished={books[1].isFinished}
-            isInMyLibrary={books[1].isInMyLibrary}
-        />);
+    describe('Book not in the Library', () => {
+        test('Book Card should be displayed', async () => {
+            renderBookData(1);
+            const bookCardNotInLibrary = screen.getByTestId("book-card-3");
+            expect(bookCardNotInLibrary).toBeTruthy();
+            expect(bookCardNotInLibrary).toBeVisible();
+        })
         
+        test('Should display title, author and duration  of the book card', () => {
+            renderBookData(1);
+            const bookCardInLibrary = screen.getByTestId("book-card-3");
+            expect(bookCardInLibrary).toBeTruthy();
+            expect(bookCardInLibrary).toBeVisible();
+            expect(bookCardInLibrary.textContent).toContain('The Bully Pulpit');
+            expect(bookCardInLibrary.textContent).toContain('Goodwin');
+            expect(bookCardInLibrary.textContent).toContain('19-minute read');
+        })
+
+        test('Book Card should have Add To Library Button', async () => {
+            renderBookData(1);
+            const addToLibraryButton = await screen.findByRole("button");
+            expect(addToLibraryButton).toBeTruthy();
+            fireEvent.click(addToLibraryButton);
+        })
+
+        test('Book Card should have Add To Library Button, and not have horizon button and progress bar', async () => {
+            renderBookData(1);
+            const addToLibraryButton = await screen.findByRole("button");
+            expect(addToLibraryButton).toBeTruthy();
+            fireEvent.click(addToLibraryButton);
+            const progressBar = screen.queryByTestId(/progress-bar/i);
+            expect(progressBar).toBeFalsy();
+            const moreIcon = screen.queryByTestId(/more-icon/i);
+            expect(moreIcon).toBeFalsy();
+        })
     });
 });

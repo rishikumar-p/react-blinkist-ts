@@ -92,6 +92,20 @@ export default function AccountDropdown() {
                     onClick={handleClick}
                     endIcon={icon}
                     data-testid="account-dropdown-button"
+                    disableRipple
+                    disableTouchRipple
+                    disableFocusRipple
+                    sx={{
+                        "&:hover": {
+                            borderBottom: "3px solid #2CE080",
+                        },
+                        borderBottom:
+                          opened === false
+                            ? "3px solid transparent"
+                            : "3px solid #00C263 ",
+                        backgroundColor: "inherit",
+                        borderRadius:0,
+                      }}    
                 >
                     <img src={accountIcon} alt="A" width="40px" height="40px" />
                 </Button>

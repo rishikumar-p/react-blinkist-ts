@@ -13,3 +13,5 @@ describe('End Icon Button', () => {
         expect(logo).toBeVisible();
     });
 });
+
+export {}

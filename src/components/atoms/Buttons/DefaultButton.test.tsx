@@ -14,7 +14,7 @@ describe('Default Button', () => {
         expect(defaultButton.textContent).toContain("Click Me");
     });
 
-    test('Checking the click', () => {
+    test('checking the click of default button', () => {
         render(<DefaultButton
             onClick={mockedHandleClick}
             label="Click Me"
@@ -26,4 +26,4 @@ describe('Default Button', () => {
         expect(defaultButton.textContent).toContain("Click Me");
         fireEvent.click(defaultButton);
     });
-});
+})

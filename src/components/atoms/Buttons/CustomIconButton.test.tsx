@@ -1,29 +1,19 @@
 import React from 'react';
-import DefaultButton from './DefaultButton';
+import CustomIconButton from './CustomIconButton';
 import { fireEvent, render, screen } from '@testing-library/react';
+import SearchIcon from '@mui/icons-material/Search';
 import '@testing-library/jest-dom';
 
 
-describe('App', () => {
-    test('checking the Default Button label', () => {
-        render(<DefaultButton label="Im Button"  variant="outlined" testId="default-button"/>);
-        const button = screen.getByTestId('default-button');
-        expect(button).toBeInTheDocument();
-        expect(button).toBeVisible();
-        expect(button.textContent).toBe('Im Button');
-    });
-});
-
-describe('checking the button click', () => {
+describe('Custom icon button', () => {
     const handleClick = () => {};
     it('Checking the click', () => {
-        render(<DefaultButton
+        render(<CustomIconButton
+            icon={<SearchIcon/>}
             onClick={handleClick}
-            label="Button"
-            variant="contained"
-            testId="default-button"
+            testId="icon-button"
         />);
-        const defaultButton = screen.getByTestId("default-button");
+        const defaultButton = screen.getByTestId("icon-button");
         expect(defaultButton).toBeTruthy();
         fireEvent.click(defaultButton);
     });

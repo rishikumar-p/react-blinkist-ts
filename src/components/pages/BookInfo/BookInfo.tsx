@@ -16,6 +16,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import api from "../../../api/books";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "@fontsource/raleway";
 
 interface Book {
     id: number;
@@ -39,27 +40,20 @@ const theme = createTheme({
   },
 
   typography: {
+    fontFamily: "Raleway",
     h5: {
       fontWeight: 'bold',
-      lineHeight: 32
+      lineHeight: 4
     },
     h4: {
       fontWeight: 900,
       fontColor: "#000000",
     },
-    body1: {
-      fontSize: 20,
-      lineHeight: 26,
-      fontWeight: 400
-    },
     subtitle1:{
       fontSize: 20,
-      lineHeight: 26,
+      lineHeight: 3,
       fontWeight: 400
-    },
-    subtitle2:{
-      
-    },
+    }
   },
 
   components: {
@@ -71,6 +65,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiTab:{
+      defaultProps:{
+        disableRipple: true,
+        disableTouchRipple: true,
+        disableFocusRipple: true
+      }
+    }
   }
 });
 
@@ -119,11 +120,12 @@ export default function BookInfo() {
 
   return (
     <ThemeProvider theme= {theme}>
-      <Container>
+      <Box sx={{paddingLeft: "40px", maxWidth:"1000px"}}>
         <br />
         <h4>Get the Ideas from</h4>
+        <br/>
         <Box display="flex">
-          <Box width="60%">
+          <Box width="60%" data-testid="book-info-content">
             <Typography variant="h4">Beyond Entrepreneurship 2.0</Typography>
             <Typography variant="subtitle1">Turning Your Business into an Enduring Great Company</Typography>
             <Typography variant="subtitle2">By Jim Collins and Bill Lazier</Typography>
@@ -145,12 +147,13 @@ export default function BookInfo() {
                   color="primary"
                   onClick={handleAddToLibrary}
                   disableRipple={true}
+                  sx={{textTransform: "none"}}
                 >
                   Add to Library
                 </Button>
               )}
               {inLibrary && !finished && (
-                <Button variant="contained" color="primary" disableRipple={true}>
+                <Button variant="contained" color="primary" disableRipple={true} sx={{textTransform: "none"}}>
                   Read now
                 </Button>
               )}
@@ -160,6 +163,7 @@ export default function BookInfo() {
                   color="primary"
                   onClick={handleFinishedReading}
                   disableRipple={true}
+                  sx={{textTransform: "none"}}
                 >
                   Finished Reading
                 </Button>
@@ -173,6 +177,7 @@ export default function BookInfo() {
               height="304px"
               alt="Book"
               margin-top="20px"
+              data-testid="book-image"
             />
           </Box>
         </Box>
@@ -184,14 +189,14 @@ export default function BookInfo() {
                 aria-label="lab API tabs example"
                 indicatorColor="primary"
               >
-                <Tab sx={{ minWidth: "200px" }} label="Synopsis" value="1" />
+                <Tab sx={{ minWidth: "200px", textTransform: "none", fontWeight:"bold", color: "#333333", fontSize: "16px"}} label="Synopsis" value="1" />
                 <Tab
-                  sx={{ minWidth: "200px" }}
+                  sx={{ minWidth: "200px", textTransform: "none", fontWeight:"bold", color: "#333333", fontSize: "16px"}}
                   label="Who is it for?"
                   value="2"
                 />
                 <Tab
-                  sx={{ minWidth: "200px" }}
+                  sx={{ minWidth: "200px", textTransform: "none",fontWeight:"bold", color: "#333333", fontSize: "16px"}}
                   label="About the author"
                   value="3"
                 />
@@ -245,7 +250,7 @@ export default function BookInfo() {
         <Grid container spacing={3}>
           {books.slice(1, 4).map((book: Book, index: number) => {
             return (
-              <Grid item key={index} xs={12} sm={4} md={4}>
+              <Grid item key={index} xs={12} sm={4} md={4} data-testid={`more-book-card-${book.id}`}>
                 <BookCard
                   id={book.id}
                   title={book.title}
@@ -261,7 +266,7 @@ export default function BookInfo() {
           })}
         </Grid>
         <br/><br/><br/>
-      </Container>
+      </Box>
      </ThemeProvider>
   );
 }

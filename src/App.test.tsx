@@ -1,9 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+jest.unmock('axios');
 
-test('renders learn react link', () => {
-  // render(<App />);
-  // const linkElement = screen.getByText(/learn react/i);
-  // expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  test('Should display the app', () => {
+    render(<App />);
+    const app = screen.getByTestId("app");
+    expect(app).toBeTruthy();
+    expect(app).toBeVisible();
+  });
 });

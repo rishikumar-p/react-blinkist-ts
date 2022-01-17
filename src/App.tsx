@@ -11,7 +11,7 @@ import { Container } from '@mui/material';
 
 function App() {
   return (
-    <Container>
+    <Container data-testid="app" maxWidth="lg">
       <ThemeProvider theme={theme} >
         <Router>
           <MainHeader/>

@@ -41,7 +41,7 @@ export const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    color: "#FFFFFF",
+                    
                     fontFamily: "Raleway",
                     backgroundColor: "#FFFFFF",
                 },
@@ -55,6 +55,9 @@ export const theme = createTheme({
                 root: {
                     backgroundColor: "#FFFFFF",
                     color: "#03314B",
+                    "&:hover": {
+                        backgroundColor: "#FFFFFF",
+                    },
                 },
             }
         },
@@ -86,7 +89,7 @@ export const theme = createTheme({
                     disableElevation: true,
                 },
                 text: {
-                    backGoundColor: "#000000",
+                    backGoundColor: "#FFFFFF",
                     borderBottom: "3px solid #FFFFFF",
                     "&:hover": {
                         borderBottom: "3px solid #2CE080",
