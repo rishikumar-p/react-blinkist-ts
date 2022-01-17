@@ -17,7 +17,7 @@ interface CardGridProps {
     isInMyLibrary: boolean;
     isFinished: boolean;
     }[]
-};
+}
 
 const MockCardGrid = (props: CardGridProps) =>{
     return (

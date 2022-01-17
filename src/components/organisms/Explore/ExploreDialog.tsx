@@ -6,13 +6,10 @@ import Button from "@mui/material/Button";
 import { categories, categoryIcons } from "../../../data/booksdata";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import EndIconButton from "../../atoms/Buttons/EndIconButton";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Divider } from "@mui/material";
-import { Typography } from "@mui/material";
-import { styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { Divider, Typography } from "@mui/material";
 import "@fontsource/raleway";
 
 const theme = createTheme({

@@ -13,10 +13,10 @@ describe('End Icon Button', () => {
         expect(button.textContent).toBe('Hello');
     });
 
-    test('checking the button icon', () => {
+    test('checking the click', () => {
         render(<EndIconButton label="Hello" variant="outlined" endIcon={<KeyboardArrowDownOutlinedIcon />} testId="end-icon-button" />);
         const button = screen.getByTestId('end-icon-button');
-        expect(button.textContent).toBe('Hello');
+        fireEvent.click(button);
     });
 
     test('Checking the icon', () => {

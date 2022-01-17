@@ -19,7 +19,7 @@ interface BookCardProps {
     image: string;
     isInMyLibrary: boolean;
     isFinished: boolean;
-};
+}
 
 export const theme = createTheme({
     palette: {

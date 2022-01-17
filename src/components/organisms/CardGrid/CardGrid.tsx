@@ -14,11 +14,11 @@ interface Book {
   isFinished: boolean;
 }
 
-interface cardGridProps {
+interface CardGridProps {
   books: Book[]
 }
 
-const CardGrid = (props: cardGridProps) => {
+const CardGrid = (props: CardGridProps) => {
   return (
     <Grid container spacing={3} data-testid="card-grid">
       {props.books.map((book: Book, index: number) => {
