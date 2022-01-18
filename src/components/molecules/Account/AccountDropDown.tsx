@@ -65,7 +65,6 @@ export default function AccountDropdown() {
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setOpened(!opened);
         setAnchorEl(event.currentTarget);
         if (opened) {
             handleClose();
@@ -73,6 +72,7 @@ export default function AccountDropdown() {
         else{
             setIcon(<KeyboardArrowUpIcon />);
         }
+        setOpened(!opened);
     };
 
     const handleClose = () => {
