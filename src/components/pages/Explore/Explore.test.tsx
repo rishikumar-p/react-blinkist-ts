@@ -5,7 +5,7 @@ jest.unmock('axios');
 
 
 describe('My Library', () => {
-    test('checking the buttom label', async () => {
+    test('checking the button label', async () => {
         render(<Explore />);
         const explorePage = await screen.findByTestId("explore-page");
         expect(explorePage).toBeTruthy();

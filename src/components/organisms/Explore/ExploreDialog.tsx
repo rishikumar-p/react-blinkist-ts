@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from 'react';
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Container from "@mui/material/Container";
@@ -10,7 +10,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { Divider, Typography } from "@mui/material";
-import "@fontsource/raleway";
 
 const theme = createTheme({
     palette: {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import EmojiObjectsOutlinedIcon from '@mui/icons-material/EmojiObjectsOutlined';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';

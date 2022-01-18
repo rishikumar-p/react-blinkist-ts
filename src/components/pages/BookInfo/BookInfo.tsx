@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from 'react';
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
@@ -15,7 +15,6 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import api from "../../../api/books";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "@fontsource/raleway";
 
 interface Book {
     id: number;

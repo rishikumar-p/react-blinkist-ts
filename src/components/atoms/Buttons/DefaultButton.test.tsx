@@ -2,6 +2,7 @@ import React from 'react';
 import DefaultButton from './DefaultButton';
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import renderer from 'react-test-renderer';
 
 
 describe('Default Button', () => {

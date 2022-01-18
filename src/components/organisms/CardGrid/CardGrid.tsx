@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import BookCard from "../../molecules/BookCard/BookCard";

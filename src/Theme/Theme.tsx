@@ -1,5 +1,5 @@
+import React from 'react';
 import { createTheme } from "@mui/material/styles";
-import "@fontsource/raleway";
 
 export const theme = createTheme({
     palette: {

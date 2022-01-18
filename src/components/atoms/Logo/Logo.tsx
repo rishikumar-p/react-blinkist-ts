@@ -1,3 +1,4 @@
+import React from 'react';
 import blinkist from './blinkist.png';
 
 export default function Logo(){

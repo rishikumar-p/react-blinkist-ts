@@ -1,3 +1,4 @@
+import React from 'react';
 import CardGrid from './CardGrid';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {books} from "../../../data/booksdata.js"

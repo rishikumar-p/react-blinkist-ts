@@ -1,3 +1,4 @@
+import React from 'react';
 import SearchInput from './SearchInput';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 

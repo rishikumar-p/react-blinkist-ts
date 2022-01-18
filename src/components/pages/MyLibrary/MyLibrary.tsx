@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import MyLibraryTab from '../../organisms/MyLibraryTab/MyLibraryTab';
 import  Box  from '@mui/material/Box';
 

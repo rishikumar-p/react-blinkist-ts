@@ -9,7 +9,6 @@ import ExpoloreDialog from "../Explore/ExploreDialog";
 import Box from "@mui/material/Box";
 import AccountDropDown from "../../molecules/Account/AccountDropDown";
 import { Link } from "react-router-dom";
-import "@fontsource/raleway";
 
 export default function MainHeader() {
   return (

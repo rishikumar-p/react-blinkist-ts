@@ -3,6 +3,7 @@ import CustomIconButton from './CustomIconButton';
 import { fireEvent, render, screen } from '@testing-library/react';
 import SearchIcon from '@mui/icons-material/Search';
 import '@testing-library/jest-dom';
+import renderer from 'react-test-renderer';
 
 
 describe('Custom icon button', () => {

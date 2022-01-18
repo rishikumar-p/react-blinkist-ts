@@ -15,6 +15,7 @@ describe('My Library', () => {
     });
 
     test('checking the tabs in my library', () => {
+        render(<MyLibrary/>);
         const tabs = screen.getAllByRole("tab");
         expect(tabs).toBeTruthy();
         expect(tabs[0].textContent).toBe("Currently Reading");

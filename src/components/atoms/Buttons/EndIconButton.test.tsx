@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import EndIconButton from './EndIconButton';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import '@testing-library/jest-dom';
+import renderer from 'react-test-renderer';
 
 const handleClick = jest.fn();
 

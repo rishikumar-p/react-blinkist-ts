@@ -1,3 +1,4 @@
+import React from 'react';
 import BookCard from './BookCard';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
