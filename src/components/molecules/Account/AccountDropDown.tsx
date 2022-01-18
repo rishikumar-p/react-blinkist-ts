@@ -68,7 +68,7 @@ export default function AccountDropdown() {
         setOpened(!opened);
         setAnchorEl(event.currentTarget);
         if (opened) {
-            setIcon(<KeyboardArrowDownIcon />);
+            handleClose();
         }
         else{
             setIcon(<KeyboardArrowUpIcon />);
