@@ -80,12 +80,14 @@
     "@testing-library/react": "^12.1.2",
     "@types/react-test-renderer": "^17.0.1",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
+    "jest-transform-stub": "^2.0.0",
     "webpack": "^5.65.0"
   },
   "jest": {
     "moduleNameMapper": {
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|css)$": "identity-obj-proxy"
+      ".+\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|css|less)$": "<rootDir>/__mocks__/fileMock.tsx"
     },
     "coverageReporters": [
       "clover",
