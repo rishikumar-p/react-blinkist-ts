@@ -6,11 +6,11 @@ import '@testing-library/jest-dom';
 
 
 describe('Custom icon button', () => {
-    const handleClick = () => {};
+    const mockHandleClick = jest.fn();
     it('Checking the click', () => {
         render(<CustomIconButton
             icon={<SearchIcon/>}
-            onClick={handleClick}
+            onClick={mockHandleClick}
             testId="icon-button"
         />);
         const defaultButton = screen.getByTestId("icon-button");

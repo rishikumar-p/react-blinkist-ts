@@ -45,5 +45,10 @@ describe('Main Header', () => {
         expect(grid).toBeVisible();
     });
 
+    test('should route to myLibrary on clicking My Library button in main header', async () => {
+        render(<MyLibraryTab />);
+        
+    });
+
 
 });
