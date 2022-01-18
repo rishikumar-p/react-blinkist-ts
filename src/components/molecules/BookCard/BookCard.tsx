@@ -10,7 +10,6 @@ import { Stack, Button, Box } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-
 interface BookCardProps {
     id: number;
     title: string;

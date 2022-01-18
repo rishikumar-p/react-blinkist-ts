@@ -65,13 +65,13 @@ export default function AccountDropdown() {
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setOpened(!opened);
         setAnchorEl(event.currentTarget);
         if (opened) {
             handleClose();
         }
         else{
             setIcon(<KeyboardArrowUpIcon />);
-            setOpened(true);
         }
     };
 
