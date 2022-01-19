@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import BookInfo from './BookInfo';
 import { fireEvent, render, screen } from '@testing-library/react';
 jest.unmock('axios');
